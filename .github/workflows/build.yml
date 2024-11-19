@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        target: [RM2100]
+        target: [K2P]
         toolchain: [mipsel-linux-musl]
     steps:
       - uses: actions/checkout@main
