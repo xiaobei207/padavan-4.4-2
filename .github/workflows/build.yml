@@ -33,7 +33,8 @@ jobs:
       - name: Prepare environment
         run: |
           # 添加 liblzma-dev 来解决 lzma.h 缺失的错误
-          sudo apt-get update && sudo apt-get install -y libtool-bin gperf python3-docutils autopoint gettext ccache liblzma-dev
+          # 添加 libltdl-dev 来解决 ltdl.m4 缺失的错误
+          sudo apt-get update && sudo apt-get install -y libtool-bin gperf python3-docutils autopoint gettext ccache liblzma-dev libltdl-dev
           echo "ROOTDIR=${{ github.workspace }}/trunk" >> $GITHUB_ENV
           echo "Compilation_time=$(TZ='Asia/Shanghai' date +%Y%m%d)" >> $GITHUB_ENV
       - name: Start build firmware
